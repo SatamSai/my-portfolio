@@ -7,9 +7,9 @@ import Learnblock1 from './assets/learnblock1.png'
 import Learnblock2 from './assets/learnblock2.png'
 import Learnblock3 from './assets/learnblock3.png'
 
-import Win95_1 from './assets/win95_1.png'
-import Win95_2 from './assets/win95_2.png'
-import Win95_3 from './assets/win95_3.png'
+import Win95_1 from './assets/Win95_1.png'
+import Win95_2 from './assets/Win95_2.png'
+import Win95_3 from './assets/Win95_3.png'
 
 
 import SurrealImgUrl from './assets/surreal.png'
