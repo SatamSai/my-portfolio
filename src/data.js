@@ -24,8 +24,8 @@ export const projects = [
         id: 0,
         title: "KanBan Flow",
         time: "02/2024 - Current",
-        githubUrl: "",
-        websiteUrl: "",
+        githubUrl: "https://github.com/SatamSai/kanbanflow",
+        websiteUrl: "https://kanbannflow.netlify.app/",
         logoUrl: ProjectLogoImg,
         pictures: [
             PreviewImg,
