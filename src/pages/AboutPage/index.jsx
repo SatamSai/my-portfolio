@@ -1,10 +1,10 @@
 import React from 'react'
-import { PortfolioCardContainer, PortfolioCardWrapper } from '../styles'
-import SocialSection from '../SocialSection'
-import Footer from '../Footer'
-import AboutSection from '../AboutSection'
-import ArtWorksSection from '../ArtworksSection'
-import ConnectSection from '../ConnectSection'
+import { PortfolioCardContainer, PortfolioCardWrapper } from '../../components/styles'
+import SocialSection from '../../components/SocialSection'
+import Footer from '../../components/Footer'
+import AboutSection from '../../components/AboutSection'
+import ArtWorksSection from '../../components/ArtworksSection'
+import ConnectSection from '../../components/ConnectSection'
 
 const AboutPage = () => {
     return (

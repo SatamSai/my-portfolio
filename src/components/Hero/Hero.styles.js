@@ -7,6 +7,10 @@ export const HeroContainer = styled.div`
     gap: 15px;
     margin-bottom: 30px;
     padding: 0px 10px;
+    @media only screen and (max-width: 450px){
+        gap: 7.5px;
+        margin-bottom: 20px;
+    }
 `;
 
 export const ProfileStatus = styled.div`
@@ -15,12 +19,24 @@ export const ProfileStatus = styled.div`
     justify-content: space-between;
     align-items: center;
     height: 60px;
+    @media only screen and (max-width: 450px){
+        height: 45px;
+    }
 `;
 
 export const Role = styled.div`
     font-size: 19px;
     display: flex;
     align-items: center;
+    @media only screen and (max-width: 600px){
+        font-size: 17px;
+    }
+    @media only screen and (max-width: 450px){
+        font-size: 15px;
+    }
+    @media only screen and (max-width: 400px){
+        font-size: 13px;
+    }
 `;
 
 export const Availablility = styled.div`
@@ -28,10 +44,25 @@ export const Availablility = styled.div`
     align-items: center;
     color: ${({ theme }) => theme.colors.green};
     background-color: ${({ theme }) => theme.colors.transparentGreen};
-    padding: 10px 15px;
+    padding: 0px 15px;
     border-radius:20px;
     font-size: 12px;
     height: 30px;
+    @media only screen and (max-width: 600px){
+        font-size: 10px;
+        padding: 0px 13px;
+        height: 29px;
+    }
+    @media only screen and (max-width: 450px){
+        font-size: 9.5px;
+        padding: 0px 11px;
+        height: 27px;
+    }
+    @media only screen and (max-width: 400px){
+        font-size: 8px;
+        padding: 0px 11px;
+        height: 25px;
+    }
 `;
 
 export const Profile = styled.div`
@@ -48,10 +79,28 @@ export const LeftContent = styled.div`
 
 export const Name = styled.h1`
     font-size: 24px;
+    @media only screen and (max-width: 600px){
+        font-size: 22px;
+    }
+    @media only screen and (max-width: 450px){
+        font-size: 19.5px;
+    }
+    @media only screen and (max-width: 400px){
+        font-size: 17px;
+    }
 `;
 
 export const Description = styled.p`
     font-size: 15px;
+    @media only screen and (max-width: 600px){
+        font-size: 13px;
+    }
+    @media only screen and (max-width: 450px){
+        font-size: 11.5px;
+    }
+    @media only screen and (max-width: 400px){
+        font-size: 10px;
+    }
 `;
 
 export const Button = styled.div`
@@ -67,6 +116,21 @@ export const Button = styled.div`
     &:hover{
         background-color: ${({ theme }) => theme.colors.primaryBg};
     }
+    @media only screen and (max-width: 600px){
+        font-size: 11.5px;
+        height: 35px;
+        width: 88px;
+    }
+    @media only screen and (max-width: 450px){
+        font-size: 10.5px;
+        height: 30px;
+        width: 75px;
+    }
+    @media only screen and (max-width: 400px){
+        font-size: 9px;
+        height: 27px;
+        width: 68px;
+    }
 `;
 
 export const ProfileImg = styled.img`
@@ -75,4 +139,18 @@ export const ProfileImg = styled.img`
     border-radius: 50%;
     background-color: ${({ theme }) => theme.colors.primaryBg};
     border: 10px solid ${({ theme }) => theme.colors.tertiaryBg};
+    @media only screen and (max-width: 600px){
+        height: 140px;
+        width: 140px;
+    }
+    @media only screen and (max-width: 450px){
+        height: 125px;
+        width: 125px;
+        border: 8px solid ${({ theme }) => theme.colors.tertiaryBg};
+    }
+    @media only screen and (max-width: 400px){
+        height: 115px;
+        width: 115px;
+        border: 6px solid ${({ theme }) => theme.colors.tertiaryBg};
+    }
 `;

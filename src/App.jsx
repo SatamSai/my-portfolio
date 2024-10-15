@@ -5,7 +5,7 @@ import Navigation from './components/Navigation';
 import ProjectsPage from './pages/ProjectsPage';
 import ProjectDetailSection from './components/ProjectDetailSection';
 import HomePage from './pages/HomePage';
-import AboutPage from './components/AboutPage';
+import AboutPage from './pages/AboutPage';
 import { ThemeContext } from './context/themeContext';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './theme';

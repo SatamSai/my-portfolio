@@ -34,5 +34,5 @@ export const PortfolioCardContainer = styled.div`
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 `
