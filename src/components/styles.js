@@ -14,6 +14,11 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.primaryBg};
     transition: all 0.3s ease;
   }
+  div {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  touch-action: manipulation;
+}
 `
 
 export const PortfolioCardWrapper = styled.div`
@@ -25,15 +30,15 @@ export const PortfolioCardWrapper = styled.div`
     animation: ${animateWrapper} 0.3s ease-in-out forwards;
     color: ${({ theme }) => theme.colors.primaryText};
     @media only screen and (max-width: 600px){
-      margin-top: 25px;
+      margin-top: 30px;
       margin-bottom: 40px;
     }
     @media only screen and (max-width: 450px){
-      margin-top: 20px;
+      margin-top: 25px;
       margin-bottom: 32px;
     }
     @media only screen and (max-width: 400px){
-      margin-top: 15px;
+      margin-top: 20px;
       margin-bottom: 25px;
     }
 `

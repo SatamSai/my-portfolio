@@ -10,15 +10,14 @@ export const NavigationWrapper = styled.div`
     justify-content: center;
     z-index: 100;
     @media only screen and (max-width: 600px){
-        top: 15px;
         height: 60px;
     }
     @media only screen and (max-width: 450px){
-        top: 10px;
+        top: 15px;
         height: 55px;
     }
     @media only screen and (max-width: 400px){
-        top: 5px;
+        top: 10px;
         height: 50px;
     }
 `
