@@ -4,11 +4,23 @@ import styled from "styled-components"
 export const NavigationWrapper = styled.div`
     position: sticky;
     top: 20px;
-    height: 64px;
+    height: 65px;
     width: 100%;
     display: flex;
     justify-content: center;
     z-index: 100;
+    @media only screen and (max-width: 600px){
+        top: 15px;
+        height: 60px;
+    }
+    @media only screen and (max-width: 450px){
+        top: 10px;
+        height: 55px;
+    }
+    @media only screen and (max-width: 400px){
+        top: 5px;
+        height: 50px;
+    }
 `
 
 export const NavigationContainer = styled.div`
@@ -21,6 +33,19 @@ export const NavigationContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0px 16px;
+    @media only screen and (max-width: 600px){
+        border-radius: 16px;
+        padding: 0px 10px;
+    }
+    @media only screen and (max-width: 450px){
+        border-radius: 12px;
+        padding: 0px 10px;
+    }
+    @media only screen and (max-width: 400px){
+        border-radius: 8px;
+        padding: 0px 4px;
+        height: 100%;
+    }
 `
 
 export const NavigationItems = styled.div`
@@ -39,12 +64,27 @@ export const NavigationItem = styled.div`
     margin: 0px 8px;
     cursor: pointer;
     color: ${({ theme }) => theme.colors.primaryText};
+    transform-origin:left;
 
     &.selected{
         background-color: ${({ theme }) => theme.colors.transparentGreen};
     }
     &:hover{
         background-color: ${({ theme }) => theme.colors.transparentGreen};
+    }
+
+    @media only screen and (max-width: 600px){
+        margin: 0px 6px;
+        font-size: 17px;
+        scale: 0.9;
+    }
+    @media only screen and (max-width: 450px){
+        margin: 0px 5px;
+        scale: 0.85;
+    }
+    @media only screen and (max-width: 400px){
+        margin: 0px 4px;
+        scale: 0.8;
     }
 `
 

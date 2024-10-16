@@ -6,6 +6,15 @@ export const ContactFormWrapper = styled.div``
 export const ContactFormHeading = styled.h1`
     margin-top: 10px;
     font-size: 30px;
+    @media only screen and (max-width: 600px){
+        font-size: 28px;
+    }
+    @media only screen and (max-width: 450px){
+        font-size: 24px;
+    }
+    @media only screen and (max-width: 400px){
+        font-size: 20px;
+    }
 `
 
 export const Form = styled.form`
@@ -28,6 +37,17 @@ export const Input = styled.input`
     &:focus{
         outline: none;
     }
+    @media only screen and (max-width: 600px){
+        height: 45px;
+        font-size: 14px;
+    }
+    @media only screen and (max-width: 450px){
+        font-size: 12.5px;
+    }
+    @media only screen and (max-width: 400px){
+        height: 35px;
+        font-size: 11px;
+    }
 `
 
 export const TextArea = styled.textarea`
@@ -43,6 +63,15 @@ export const TextArea = styled.textarea`
     &:focus{
         outline: none;
     }
+    @media only screen and (max-width: 600px){
+        font-size: 14px;
+    }
+    @media only screen and (max-width: 450px){
+        font-size: 12.5px;
+    }
+    @media only screen and (max-width: 400px){
+        font-size: 11px;
+    }
 `
 
 export const SubmitButton = styled.button`
@@ -53,4 +82,14 @@ export const SubmitButton = styled.button`
     border: 0px;
     color: ${({ theme }) => theme.colors.primaryText};
     cursor: pointer;
+    @media only screen and (max-width: 600px){
+        font-size: 14px;
+    }
+    @media only screen and (max-width: 450px){
+        height: 35px;
+        font-size: 12.5px;
+    }
+    @media only screen and (max-width: 400px){
+        font-size: 11px;
+    }
 `
