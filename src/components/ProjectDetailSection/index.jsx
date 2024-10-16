@@ -21,11 +21,13 @@ const ProjectDetailSection = () => {
                 <SectionTemplate title={"Project"}>
                     <ProjectInfoContainer>
                         <ProjectHeading>
-                            <ProjectLogo src={projectDetails.logoUrl} />
-                            <ProjectTitle>
-                                <Title>{projectDetails.title}</Title>
-                                <Time>{projectDetails.time}</Time>
-                            </ProjectTitle>
+                            <div style={{ display: 'flex', alignItems: 'center' }}>
+                                <ProjectLogo src={projectDetails.logoUrl} />
+                                <ProjectTitle>
+                                    <Title>{projectDetails.title}</Title>
+                                    <Time>{projectDetails.time}</Time>
+                                </ProjectTitle>
+                            </div>
                             <LiveLink>
                                 <a href={projectDetails.githubUrl} target='blank'>
                                     <GitHub />
