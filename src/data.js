@@ -11,6 +11,10 @@ import Win95_1 from './assets/Win95_1.png'
 import Win95_2 from './assets/Win95_2.png'
 import Win95_3 from './assets/Win95_3.png'
 
+import Movie_1 from './assets/Moviebase_1.png'
+import Movie_2 from './assets/Moviebase_2.png'
+import Movie_3 from './assets/Moviebase_3.png'
+
 
 import SurrealImgUrl from './assets/surreal.png'
 import DecimalImgUrl from './assets/dpa.png'
@@ -60,9 +64,9 @@ export const projects = [
         websiteUrl: "https://moviebase22.netlify.app/",
         logoUrl: MovieBaseLogo,
         pictures: [
-            PreviewImg,
-            PreviewImg,
-            PreviewImg
+            Movie_1,
+            Movie_2,
+            Movie_3
         ],
         about: "MovieBase is a responsive ReactJS-based platform for exploring movies and TV shows. It integrates with the TMDB API to offer users a wide array of content, from trending and top-rated movies to upcoming shows. Users can search for specific titles or celebrities, and view detailed information, including trailers, featured cast, and posters. The platform also allows users to browse collections of related movies.\n\nThe website is designed to provide a smooth and engaging user experience, making it easy to explore and discover new content.",
         techStack: "HTML, CSS, ReactJS, TMDB API",
