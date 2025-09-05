@@ -74,7 +74,7 @@ export const TextArea = styled.textarea`
     }
 `
 
-export const SubmitButton = styled.button`
+export const SubmitButton = styled.div`
     width: 100%;
     height: 40px;
     font-size: 15px;

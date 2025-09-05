@@ -62,6 +62,8 @@ export const Logo = styled.img`
     height: 55px;
     width: 55px;
     border-radius: 5px;
+    background-color: white;
+    padding: 3px;
     @media only screen and (max-width: 600px){
       height: 48px;
       width: 48px;
