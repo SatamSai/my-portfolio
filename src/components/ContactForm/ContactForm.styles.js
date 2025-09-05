@@ -81,6 +81,11 @@ export const SubmitButton = styled.div`
     background-color: ${({ theme }) => theme.colors.primaryBg};
     border: 0px;
     color: ${({ theme }) => theme.colors.primaryText};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+
     cursor: pointer;
     @media only screen and (max-width: 600px){
         font-size: 14px;
