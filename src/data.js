@@ -152,6 +152,6 @@ export const skills = {
         'WebRTC', 'Webpack', 'Babel', 'Jest', 'React Testing Library', 'Postman'
     ],
     backend: ['NodeJS', 'ExpressJS', 'Mongoose', 'REST APIs', 'JWT', 'Socket.io'],
-    devops_tools: ['Jenkins', 'Docker', 'Podman', 'Traefik', 'Nginx', 'CI/CD'],
-    data_cloud: ['Azure Databricks', 'PySpark', 'Delta Tables']
+    devops: ['Jenkins', 'Docker', 'Podman', 'Traefik', 'Nginx', 'CI/CD'],
+    data: ['Azure Databricks', 'PySpark', 'Delta Tables']
 }
