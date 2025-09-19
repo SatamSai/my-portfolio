@@ -21,7 +21,7 @@ const JourneySection = () => {
                         <JourneyContent>
                             <JourneyHeader onClick={() => toggleExpand(journey.id)}>
                                 <HeaderContent>
-                                    <Logo src={journey.logo} />
+                                    <Logo src={journey.logo} loading='lazy'/>
                                     <Heading>
                                         <Title>{journey.title} {journey.icon}</Title>
                                         <SubTitle>{journey.subTitle}</SubTitle>

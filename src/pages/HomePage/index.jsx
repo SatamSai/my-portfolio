@@ -1,4 +1,3 @@
-import React from 'react'
 import Hero from '../../components/Hero'
 import SkillSection from '../../components/SkillsSection'
 import JourneySection from '../../components/JourneySection'
@@ -7,12 +6,14 @@ import { PortfolioCardContainer, PortfolioCardWrapper } from '../../components/s
 import ConnectSection from '../../components/ConnectSection'
 import SocialSection from '../../components/SocialSection'
 import Footer from '../../components/Footer'
+import LeetCodeSection from '../../components/LeetCodeSection'
 
 const HomePage = () => {
     return (
         <PortfolioCardWrapper>
             <PortfolioCardContainer>
                 <Hero />
+                <LeetCodeSection/>
                 <SkillSection />
                 <ProjectSection />
                 <JourneySection />

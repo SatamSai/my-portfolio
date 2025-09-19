@@ -24,7 +24,7 @@ const ProjectSection = () => {
                                 <ProjectContent>
                                     <ProjectHeader onClick={() => setExpanded(!expanded)}>
                                         <HeaderContent>
-                                            <Logo src={project.logoUrl} />
+                                            <Logo src={project.logoUrl} loading='lazy' />
                                             <Heading>
                                                 <Title>{project.title}</Title>
                                                 <SubTitle>{project.time}</SubTitle>
