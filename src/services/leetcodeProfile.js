@@ -9,7 +9,13 @@ export async function fetchLeetCodeProfile(username) {
 }
 
 export async function fetchRecentSubmissions(username) {
-  const uri = `${username}/acSubmission`
+  const uri = `${username}/submission`
+  const data = await api(uri, {}, BASE_URL);
+  return data;
+}
+
+export async function fetchSubmissionsByYear(username, year) {
+  const uri = `userProfileCalendar?username=${username}&year=${year}`
   const data = await api(uri, {}, BASE_URL);
   return data;
 }

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SectionTemplate from "../SectionTemplate";
+import DoughnutChart from "./DoughtnutChart";
+import HeatMap from "./HeatMap";
 import {
   Container,
   RankingCard,
@@ -14,63 +16,81 @@ import {
   QuestionStat,
   QuestionTitle,
   QuestionFigures,
+  SummaryWrapper,
 } from "./LeetCodeSection.styles";
-import DoughnutChart from "./DoughtnutChart";
-import { fetchLeetCodeProfile, fetchRecentSubmissions } from "../../services/leetcodeProfile";
-
+import {
+  fetchLeetCodeProfile,
+  fetchRecentSubmissions,
+} from "../../services/leetcodeProfile";
+import { username } from "../../contants/constants";
 
 const LeetCodeSection = () => {
   const [profile, setProfile] = useState(null);
-  const [recent, setRecent] = useState([])
+  const [recentSubs, setRecentSubs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const profileData = await fetchLeetCodeProfile("sainam7740")
-      const submissionData = await fetchRecentSubmissions("sainam7740")
-      setProfile(profileData);
-      setRecent(submissionData.submission)
-    }
+      try {
+        const profileData = await fetchLeetCodeProfile(username);
+        const submissionData = await fetchRecentSubmissions(username);
 
-    fetchData()
+        setProfile(profileData);
+        setRecentSubs(submissionData.submission.slice(0, 5));
+      } catch (error) {
+        console.error("Failed to fetch LeetCode data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
-  const recentSubs = recent?.slice(0, 3)
+  if (!profile) {
+    return (
+      <SectionTemplate title="LeetCode">
+        <div style={{ display: "flex", justifyContent: "center", padding: 20 }}>
+          Loading...
+        </div>
+      </SectionTemplate>
+    );
+  }
 
-  if (!profile) return (
-    <SectionTemplate title={"LeetCode"}>
-      <div style={{ display: "flex", justifyContent: 'center', padding:20 }}>Loading....</div>
-    </SectionTemplate>
-  );
+  const questionStats = [
+    { label: "Easy", color: "#00CFFF", solved: profile.easySolved, total: profile.totalEasy },
+    { label: "Med.", color: "#FFC107", solved: profile.mediumSolved, total: profile.totalMedium },
+    { label: "Hard", color: "#FF4C4C", solved: profile.hardSolved, total: profile.totalHard },
+  ];
 
   return (
     <SectionTemplate title="LeetCode">
       <Container>
         <SummarySection>
-          <DoughnutChart profile={profile} />
-          <QuestionStats>
-            <QuestionStat>
-              <QuestionTitle color="#00CFFF">Easy</QuestionTitle>
-              <QuestionFigures><strong>{profile.easySolved}</strong>/{profile.totalEasy}</QuestionFigures>
-            </QuestionStat>
-            <QuestionStat>
-              <QuestionTitle color="#FFC107">Med.</QuestionTitle>
-              <QuestionFigures><strong>{profile.mediumSolved}</strong>/{profile.totalMedium}</QuestionFigures>
-            </QuestionStat>
-            <QuestionStat>
-              <QuestionTitle color="#FF4C4C">Hard</QuestionTitle>
-              <QuestionFigures><strong>{profile.hardSolved}</strong>/{profile.totalHard}</QuestionFigures>
-            </QuestionStat>
-          </QuestionStats>
+          <SummaryWrapper>
+            <DoughnutChart profile={profile} />
+            <QuestionStats>
+              {questionStats.map((stat) => (
+                <QuestionStat key={stat.label}>
+                  <QuestionTitle color={stat.color}>{stat.label}</QuestionTitle>
+                  <QuestionFigures>
+                    <strong>{stat.solved}</strong>/{stat.total}
+                  </QuestionFigures>
+                </QuestionStat>
+              ))}
+            </QuestionStats>
+          </SummaryWrapper>
+
+          <RankingCard>
+            <RankingLabel>Global Ranking:</RankingLabel>
+            <RankingValue>#{profile.ranking.toLocaleString()}</RankingValue>
+          </RankingCard>
         </SummarySection>
 
-        <RankingCard>
-          <RankingLabel>Global Ranking</RankingLabel>
-          <RankingValue>{profile.ranking.toLocaleString()}</RankingValue>
-        </RankingCard>
+        {/* Heat Map */}
+        <HeatMap />
 
-        <h3>Recent Submissions</h3>
+        {/* Recent Submissions */}
         <SubmissionsContainer>
-          {recentSubs?.map((sub) => (
+          <h3 style={{marginBottom:'10px'}}>Recent Submissions</h3>
+          {recentSubs.map((sub) => (
             <SubmissionItem key={sub.timestamp}>
               <SubmissionText>
                 <p>{sub.title}</p>
@@ -88,4 +108,3 @@ const LeetCodeSection = () => {
 };
 
 export default LeetCodeSection;
-
