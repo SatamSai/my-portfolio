@@ -1,5 +1,44 @@
 import styled from "styled-components";
 
+export const Shimmer = styled.div`
+  background: linear-gradient(
+    90deg,
+    ${({ theme }) => theme.colors.tertiaryBg} 25%,
+    ${({ theme }) => theme.colors.secondaryBg} 50%,
+    ${({ theme }) => theme.colors.tertiaryBg} 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+`;
+
+export const DoughnutShimmer = styled(Shimmer)`
+  width: 55%;
+  aspect-ratio: 1;
+  @media only screen and (max-width: 500px) {
+    width: 60%;
+  }
+`;
+
+export const QuestionStatShimmer = styled(Shimmer)`
+  width: 120px;
+  height: 60px;
+  @media only screen and (max-width: 500px) {
+    width: 80px;
+    height: 50px;
+  }
+`;
+
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -37,8 +76,18 @@ export const QuestionStats = styled.div`
   }
 `
 
+export const MoreData = styled.div`
+  max-height: ${(props) => props.show ? "1000px": "0px"};
+  overflow: hidden;
+  flex-direction: column;
+  display: flex;
+  gap: 1.5rem;
+  transition: max-height 0.5s ease;
+`
+
 export const DoughnutWrapper = styled.div`
   width: 55%;
+  aspect-ratio: 1;
   position: relative;
   @media only screen and (max-width: 500px){
     width: 60%;
@@ -206,3 +255,20 @@ export const StatusBadge = styled.span`
             : "#374151"};
 `;
 
+export const MoreDetailsButton = styled.div`
+  margin-top: ${({show}) => show ? "0px" : "-1.5rem"};
+  transition: margin 0.5s ease;
+  color: ${({ theme }) => theme.colors.primaryText};
+  p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    img{
+      height: 20px;
+      transform: ${({show}) => show ? "rotate(180deg)" : ""};
+      transition: all 0.5s ease;
+    }
+  }
+`
