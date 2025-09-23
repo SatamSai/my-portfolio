@@ -51,9 +51,8 @@ const LeetCodeSection = () => {
         setProfileState({ status: "failure", data: null });
       }
     };
-    setTimeout(() => {
-      fetchData();
-    }, 3000)
+    
+    fetchData();
   }, []);
 
   const questionStats = [
