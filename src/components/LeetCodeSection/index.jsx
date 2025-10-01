@@ -21,6 +21,8 @@ import {
   MoreDetailsButton,
   DoughnutShimmer,
   QuestionStatShimmer,
+  LeetCodeTitle,
+  LeetCodeLink,
 } from "./LeetCodeSection.styles";
 import {
   fetchLeetCodeProfile,
@@ -28,6 +30,7 @@ import {
 } from "../../services/leetcodeProfile";
 import { username } from "../../contants/constants";
 import MoreIcon from "../../assets/circular-caret-down.svg";
+import { OpenInNew } from '@mui/icons-material';
 
 const LeetCodeSection = () => {
   const [profileState, setProfileState] = useState({
@@ -51,7 +54,7 @@ const LeetCodeSection = () => {
         setProfileState({ status: "failure", data: null });
       }
     };
-    
+
     fetchData();
   }, []);
 
@@ -62,7 +65,7 @@ const LeetCodeSection = () => {
   ];
 
   return (
-    <SectionTemplate title="LeetCode">
+    <SectionTemplate title={<LeetCodeTitle>LeetCode <LeetCodeLink target="_blank" href={`https://leetcode.com/u/${username}`}><OpenInNew/></LeetCodeLink> </LeetCodeTitle>}>
       <Container>
         <SummarySection>
           <SummaryWrapper>

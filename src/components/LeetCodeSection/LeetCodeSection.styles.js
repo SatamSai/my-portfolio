@@ -38,6 +38,21 @@ export const QuestionStatShimmer = styled(Shimmer)`
   }
 `;
 
+export const LeetCodeTitle = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
+export const LeetCodeLink = styled.a`
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  :hover{
+    color: #E5E5E5;
+  }
+`
 
 export const Container = styled.div`
   display: flex;
@@ -77,7 +92,7 @@ export const QuestionStats = styled.div`
 `
 
 export const MoreData = styled.div`
-  max-height: ${(props) => props.show ? "1000px": "0px"};
+  max-height: ${(props) => props.show ? "1000px" : "0px"};
   overflow: hidden;
   flex-direction: column;
   display: flex;
@@ -256,7 +271,7 @@ export const StatusBadge = styled.span`
 `;
 
 export const MoreDetailsButton = styled.div`
-  margin-top: ${({show}) => show ? "0px" : "-1.5rem"};
+  margin-top: ${({ show }) => show ? "0px" : "-1.5rem"};
   transition: margin 0.5s ease;
   color: ${({ theme }) => theme.colors.primaryText};
   p{
@@ -267,7 +282,7 @@ export const MoreDetailsButton = styled.div`
     cursor: pointer;
     img{
       height: 20px;
-      transform: ${({show}) => show ? "rotate(180deg)" : ""};
+      transform: ${({ show }) => show ? "rotate(180deg)" : ""};
       transition: all 0.5s ease;
     }
   }
