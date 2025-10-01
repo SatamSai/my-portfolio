@@ -76,6 +76,7 @@ export const SummaryWrapper = styled.div`
   justify-content: space-between;
   @media only screen and (max-width: 500px){
     flex-direction: column;
+    gap: 20px;
   }
 `
 

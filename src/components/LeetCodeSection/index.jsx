@@ -34,7 +34,7 @@ import { OpenInNew } from '@mui/icons-material';
 
 const LeetCodeSection = () => {
   const [profileState, setProfileState] = useState({
-    status: "loading", // "loading" | "success" | "failure"
+    status: "loading",
     data: null,
   });
   const [recentSubs, setRecentSubs] = useState([]);
