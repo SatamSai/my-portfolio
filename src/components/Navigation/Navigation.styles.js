@@ -4,7 +4,7 @@ import styled from "styled-components"
 export const NavigationWrapper = styled.div`
     position: sticky;
     top: 20px;
-    height: 65px;
+    height: 70px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@ export const NavigationWrapper = styled.div`
 
 export const NavigationContainer = styled.div`
     width: 95%;
-    background-color:  ${({ theme }) => theme.colors.secondaryBg};
+    background-color:  ${({ theme }) => theme.colors.secondaryBg + "AA"};
     height: 100%;
     border-radius: 20px;
     max-width: 560px;
@@ -45,6 +45,13 @@ export const NavigationContainer = styled.div`
         padding: 0px 4px;
         height: 100%;
     }
+`
+
+export const NavigationContent = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 `
 
 export const NavigationItems = styled.div`
