@@ -24,14 +24,20 @@ export const NavigationWrapper = styled.div`
 
 export const NavigationContainer = styled.div`
     width: 95%;
-    background-color:  ${({ theme }) => theme.colors.secondaryBg + "AA"};
-    height: 100%;
-    border-radius: 20px;
     max-width: 560px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0px 16px;
+    border-radius: 20px;
+    background: ${({ theme }) => theme.colors.secondaryBg + "AA"};
+
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        
+    border-bottom: 4px solid rgba(255, 255, 255, 0.1);
+
     @media only screen and (max-width: 600px){
         border-radius: 16px;
         padding: 0px 10px;
@@ -70,7 +76,6 @@ export const NavigationItem = styled.div`
     margin: 0px 8px;
     cursor: pointer;
     color: ${({ theme }) => theme.colors.primaryText};
-    transform-origin:left;
 
     &.selected{
         background-color: ${({ theme }) => theme.colors.transparentGreen};
